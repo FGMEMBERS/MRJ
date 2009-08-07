@@ -1,0 +1,10 @@
+<!--
+  Cockpit model for MRJ
+  Created on July 31th, 2009 by Tat Nishioka
+  $Id$
+-->
+     
+<PropertyList>
+  <path>panel.ac</path>
+
+</PropertyList>
