@@ -110,10 +110,8 @@
 -->
   <help>
    <key>
-<!--
-    <name>Ctrl-B</name>
-    <desc>toggle speed brake</desc>
--->
+    <name>Ctrl-Shift-M</name>
+    <desc>Activate Performance Monitor</desc>
    </key>
   </help>
  </sim>
@@ -190,6 +188,9 @@
  <nasal>
   <MRJ>
     <file>Aircraft/MRJ/Nasal/lighting.nas</file>
+    <file>Aircraft/MRJ/Nasal/dialog.nas</file>
+    <file>Aircraft/MRJ/Nasal/keyhandler.nas</file>
+    <file>Aircraft/MRJ/Nasal/performance.nas</file>
   </MRJ>
  </nasal>
 </PropertyList>

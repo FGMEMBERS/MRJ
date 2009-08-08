@@ -8,18 +8,9 @@ Max Takeoff Weight               | 39,600 kg (87,300 lb)  | adjusted up to 39,60
 Max Landing Weight               | 38,500 kg (84,900 lb)  | Not yet measured
 Range@full payload               | 1,610 km (870 nm)      | 1,624 km (877 nm)
 Cruise Mach Number/MMO           | M 0.78 / M 0.82        | M 0.78 @ 32000 ft
-Takeoff field Length(MTOW,SL,ISA)| 1,460 m (4,790 ft)     | 1,450 m (4,758 ft) w/ .3flap; 1,589m w/o flap
-Landing field length(MLW,Dry)    | 1,450 m (4,760 ft)     | Not yet measured
-Takeoff speed (MTOW,flap.3)      | N/A                    | 143 kts
+Takeoff field Length(MTOW,SL,ISA)| 1,460 m (4,790 ft)     | 1,316 m (4319 ft) w/ .3 flap; 1,589m w/o flap
+Landing field length(MLW,Dry)    | 1,450 m (4,760 ft)     | 1443 m (4636 ft) w/ .7 brake
+Takeoff speed (MTOW,flap.3)      | N/A                    | 148 kts
 -----------------------------------------------------------------------------------------------
 Fuel efficiency @ Cruise         | N/A                    | 0.59 km / us-gal (0.32 nm/us-gal)
-
-
-Engine Thrust
-Take off distance: 1286 m (4219 ft) @ 36850kg;  should be 1450m @ 39600kg
-Range: 2946 km (1591 nm) ; should be 1610km
-
-Cruise speed: M0.781 (296kts) @ 30,000ft; throttle 0.76
-
-15.31775433, 151.5552806
 
