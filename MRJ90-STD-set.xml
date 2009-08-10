@@ -187,12 +187,14 @@
   </fuel>
  </consumables>
 
- <!-- for adjusting dCLflap and CDflap -->
+ <!-- for adjusting Lift and Drag on the fly. Development use only -->
  <fdm>
   <jsbsim>
     <aero>
       <ACLflap-coeff>1.0</ACLflap-coeff>
       <ACDflap-coeff>1.0</ACDflap-coeff>
+      <ACLalpha-coeff>1.0</ACLalpha-coeff>
+      <ACD0-coeff>1.0</ACD0-coeff>
       <Aelevator-deflection-coeff>1.0</Aelevator-deflection-coeff>
     </aero>
   </jsbsim>

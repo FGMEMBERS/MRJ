@@ -46,7 +46,7 @@
    <vtailarea unit="FT2">  172.00 </vtailarea>
    <vtailarm  unit="FT" >   54.85 </vtailarm>
    <location name="AERORP" unit="M">
-     <x>  -0.32 </x> <!-- was -0.32 -->
+     <x>  -0.39 </x>
      <y>   0.00 </y>
      <z>   0.00 </z>
    </location>
@@ -68,7 +68,7 @@
    <izz unit="SLUG*FT2">   1000006 </izz>
    <emptywt unit="LBS" >     54895 </emptywt> <!-- 25,000 kg -->
    <location name="CG" unit="M">
-     <x> -1.14 </x> <!-- was -1.04 -->
+     <x> -1.04 </x>
      <y>  0.00 </y>
      <z>  0.00 </z>
    </location>
@@ -94,7 +94,7 @@
    <pointmass name="Passengers and Baggages">
      <weight unit="LBS"> 12264 </weight> <!-- 5,600 kg -->
      <location name="POINTMASS" unit="M">
-       <x> -1.99 </x> <!-- was -1.29 ; 1408m @ -1.75 -->
+       <x> -1.14 </x>
        <y>  0.00 </y>
        <z>  0.15</z>
      </location>
@@ -266,7 +266,7 @@
     <feed>1</feed>
     <thruster file="direct">
      <location unit="M">
-       <x> -2.24 </x>
+       <x> -2.54 </x>
        <y> -4.96 </y>
        <z> -0.78 </z>
      </location>
@@ -293,7 +293,7 @@
     <feed>1</feed>
     <thruster file="direct">
      <location unit="M">
-       <x> -2.24 </x>
+       <x> -2.54 </x>
        <y>  4.96 </y>
        <z> -0.78 </z>
      </location>
@@ -307,7 +307,7 @@
 
   <tank type="FUEL" number="0">
      <location unit="M">
-       <x> -1.17 </x>
+       <x> -1.22 </x>
        <y> -2.49 </y>
        <z>  0.00 </z>
      </location>
@@ -317,7 +317,7 @@
 
   <tank type="FUEL" number="1">
      <location unit="M">
-       <x> -1.17 </x>
+       <x> -1.22 </x>
        <y>  2.49 </y>
        <z>  0.00 </z>
      </location>
@@ -586,36 +586,19 @@
       <product>
           <property>aero/qbar-psf</property> <!-- dynamic pressure 0-600 f(velocity) -->
           <property>metrics/Sw-sqft</property> <!-- = wing area -->
+          <property>aero/ACLalpha-coeff</property>
           <table>
             <independentVar lookup="row">aero/alpha-rad</independentVar>
             <tableData>
-<!--
               -0.20 -0.680
-               0.00  0.200
-               0.23  1.200
-               0.60  0.600
--->
-              -0.20 -0.680
-               0.00  0.200
-               0.09  0.800  <!--  5 deg -->
-               0.17  1.350  <!-- 10 deg -->
-               0.26  2.250  <!-- 15 deg; was 1.850 -->
-               0.35  2.510  <!-- 20 deg; was 2.210 -->
-               0.42  2.840  <!-- 24 deg; was 2.340 -->
+               0.00  0.300  <!--  0 deg -->
+               0.09  0.900  <!--  5 deg -->
+               0.17  1.850  <!-- 10 deg -->
+               0.26  2.350  <!-- 15 deg -->
+               0.35  2.760  <!-- 20 deg -->
+               0.42  2.840  <!-- 24 deg -->
                0.44  2.280  <!-- 25 deg -->
                0.60  0.600
-<!--
-               -0.2	-0.68
-                  0	2.5
-               0.09	3.1
-               0.17	3.65
-               0.26	4.15
-               0.35	4.51
-               0.38	4.6
-               0.4	4.63
-               0.42	4.64
-               0.44	4.58
--->
             </tableData>
           </table>
       </product>
@@ -653,7 +636,7 @@
            <property>fcs/flap-pos-deg</property>
            <property>aero/function/kCLge</property>
            <property>aero/ACLflap-coeff</property>
-           <value> 0.09500 </value>
+           <value> 0.05900 </value>
        </product>
     </function>
 
@@ -687,15 +670,12 @@
        <product>
           <property>aero/qbar-psf</property>
           <property>metrics/Sw-sqft</property>
+          <property>aero/ACD0-coeff</property>
           <table>
             <independentVar lookup="row">aero/alpha-rad</independentVar>
             <tableData>
              -1.57       1.500
              -0.26    0.026
-              0.00    0.020
-              0.26    0.026
-              1.57       1.500
-<!--
 	      0.00   0.038
               0.09   0.045
               0.17   0.055
@@ -706,7 +686,6 @@
               0.42   0.124
               0.44   0.140
               1.57   1.500
--->
             </tableData>
           </table>
        </product>
@@ -747,7 +726,7 @@
            <property>metrics/Sw-sqft</property>
            <property>fcs/flap-pos-deg</property>
            <property>aero/ACDflap-coeff</property>
-           <value> 0.0097 </value>
+           <value> 0.0076 </value>
          </product>
     </function>
 
