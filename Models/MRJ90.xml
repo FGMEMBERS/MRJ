@@ -64,7 +64,7 @@
    <type>material</type>
    <object-name>cabinet.front</object-name>
    <object-name>cabinet.rear</object-name>
-   <property-base>sim/model/livery</property-base>
+   <property-base>sim/model/livery-cabinet</property-base>
    <texture-prop>texture</texture-prop>
    <texture>cabinet.png</texture>
  </animation> 
@@ -72,7 +72,7 @@
  <animation>
    <type>material</type>
    <object-name>floor</object-name>
-   <property-base>sim/model/livery</property-base>
+   <property-base>sim/model/livery-carpet</property-base>
    <texture-prop>texture</texture-prop>
    <texture>carpet.png</texture>
  </animation> 

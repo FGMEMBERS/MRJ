@@ -6,10 +6,15 @@
    <livery>
     <name type="string">ANA</name>
     <texture>ANA.png</texture>
-    <texture>cabin.png</texture>
-    <texture>carpet.png</texture>
    </livery>
+
+   <livery-cabinet>
+    <texture>cabinet.png</texture>
+   </livery-cabinet>
+
+   <livery-carpet>
+    <texture>carpet.png</texture>
+   </livery-carpet>
   </model>
  </sim>
 </PropertyList>
-
