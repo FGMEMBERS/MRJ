@@ -7,6 +7,15 @@
 
 <PropertyList>
   <path>MRJ90.ac</path>
+  <nasal>
+    <load>
+      var livery_update = aircraft.livery_update.new("Aircraft/MRJ/Models/Liveries", 10);
+    </load>
+
+    <unload>
+      livery_update.stop();
+    </unload>
+  </nasal>
 
   <!-- Cockpit Panels -->
   <model>
@@ -28,6 +37,45 @@
       <z-m> 0.00</z-m>
     </offsets>
   </model>
+
+ <!-- Liveries -->
+ <animation>
+   <type>material</type>
+   <object-name>gear.nose</object-name>
+   <object-name>gear.left</object-name>
+   <object-name>gear.right</object-name>
+   <object-name>PW1000G.left</object-name>
+   <object-name>PW1000G.right</object-name>
+   <object-name>flapSupports</object-name>
+   <object-name>wing</object-name>
+   <object-name>fuselage</object-name>
+   <object-name>elevator.left</object-name>
+   <object-name>elevator.right</object-name>
+   <object-name>seats</object-name>
+   <object-name>hstab</object-name>
+   <object-name>vstab</object-name>
+   <object-name>doors</object-name>
+   <property-base>sim/model/livery</property-base>
+   <texture-prop>texture</texture-prop>
+   <texture>MRJ.png</texture>
+ </animation> 
+
+ <animation>
+   <type>material</type>
+   <object-name>cabinet.front</object-name>
+   <object-name>cabinet.rear</object-name>
+   <property-base>sim/model/livery</property-base>
+   <texture-prop>texture</texture-prop>
+   <texture>cabinet.png</texture>
+ </animation> 
+
+ <animation>
+   <type>material</type>
+   <object-name>floor</object-name>
+   <property-base>sim/model/livery</property-base>
+   <texture-prop>texture</texture-prop>
+   <texture>carpet.png</texture>
+ </animation> 
 
  <!-- turbo fans -->
  <animation>

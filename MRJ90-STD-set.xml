@@ -23,6 +23,9 @@
 
   <model>
    <path>Aircraft/MRJ/Models/MRJ90.xml</path>
+   <livery>
+     <file type="string">Prototype</file>
+   </livery>
    <MRJ>
     <klu type="bool">false</klu>
     <us type="bool">true</us>
@@ -101,13 +104,23 @@
             <dynamic-view type="bool">true</dynamic-view>
     </config>
    </view>
-<!--
-   <systems>
-     <autopilot>
-       <path>Aircraft/737-300/Systems/737-autopilotV4.xml</path>
-     </autopilot>
-   </systems>
--->
+
+    <menubar>
+     <default>
+      <menu n="100">
+       <label>MRJ</label>
+       <enabled type="bool">true</enabled>
+       <item>
+        <label>Select Livery</label>
+        <binding>
+         <command>nasal</command>
+         <script>aircraft.livery.dialog.open()</script>
+        </binding>
+       </item>
+      </menu>
+     </default>
+    </menubar>
+
   <help>
    <key>
     <name>Ctrl-Shift-M</name>
@@ -191,6 +204,7 @@
     <file>Aircraft/MRJ/Nasal/dialog.nas</file>
     <file>Aircraft/MRJ/Nasal/keyhandler.nas</file>
     <file>Aircraft/MRJ/Nasal/performance.nas</file>
+    <file>Aircraft/MRJ/Nasal/liveries.nas</file>
   </MRJ>
  </nasal>
 </PropertyList>

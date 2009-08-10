@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+ <sim>
+  <model>
+   <livery>
+    <name type="string">ANA</name>
+    <texture>ANA.png</texture>
+    <texture>cabin.png</texture>
+    <texture>carpet.png</texture>
+   </livery>
+  </model>
+ </sim>
+</PropertyList>
+
