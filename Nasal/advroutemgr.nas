@@ -81,6 +81,9 @@ AdvancedRouteManager.distanceForRemoval = func() {
   var heading2 = me.heading(wp1, wp2);
   
   var angle = math.abs(heading2 - ((180 + heading1)));
+  if (angle > 360) { angle -= 360; }
+  if (angle > 180) { angle = 360 - angle; } 
+
   var velocity = getprop("/velocities/groundspeed-kt");
   # required radius (nm) for 2.5 deg / sec turn for 120 kt (3.0 deg - 0.5 deg for roll-in/out delay),
   # radius is multiplied by vel / 120 kt for error adjusting in higher speed
