@@ -339,6 +339,25 @@
 	</clipto>
       </summer>
 
+<!--
+      <scheduled_gain name="Pitch Scheduled Gain 1"> 
+        <input>fcs/pitch-gain-1</input> 
+        <gain>0.017</gain> 
+        <table> 
+          <independentVar>fcs/elevator-pos-rad</independentVar> 
+          <tableData> 
+            -0.68  -26.548 
+            -0.595 -20.513 
+            -0.51  -15.328 
+             … 
+             0.527 -20.513 
+             0.612 -26.548 
+             0.697 -33.433 
+          </tableData> 
+        </table> 
+      </scheduled_gain> 
+-->
+
       <aerosurface_scale name="Elevator Control">
 	<input>fcs/pitch-trim-sum</input>
 	<range>
@@ -885,7 +904,9 @@
             <independentVar lookup="row">velocities/mach</independentVar>
             <tableData>
               0.0     -1.500
-              2.0     -0.300
+              0.4     -0.900
+              0.7     -0.700     
+              2.0     -0.100
             </tableData>
           </table>
 	</product>

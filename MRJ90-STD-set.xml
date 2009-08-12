@@ -207,6 +207,7 @@
       <file>Aircraft/MRJ/Nasal/keyhandler.nas</file>
       <file>Aircraft/MRJ/Nasal/performance.nas</file>
       <file>Aircraft/MRJ/Nasal/liveries.nas</file>
+      <file>Aircraft/MRJ/Nasal/advroutemgr.nas</file>
     </MRJ>
   </nasal>
 </PropertyList>

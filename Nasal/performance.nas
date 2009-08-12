@@ -322,6 +322,8 @@ LandingDistance.autoland = func() {
   var speed = getprop("/velocities/airspeed-kt");
   if (speed < 0.1) {
     screen.log.write("Landed.");
+    setprop("/controls/gear/brake-left", 0.0);
+    setprop("/controls/gear/brake-right", 0.0);
     me.isRunning = 0;
     me.isAvailable = 0;
     return;
@@ -330,14 +332,20 @@ LandingDistance.autoland = func() {
   var dist_m = calcDistance(me.startPos, me.endPos);
   var dist_ft = dist_m * 3.2808399;
   setprop("/sim/gui/dialogs/performance-monitor/land-dist", dist_ft);
-#  settimer(func { landingDist.update(); }, 0);
-  if (getprop("/gear/gear/compression-norm") > 0.05) {
-    # auto brake
+  if (getprop("/gear/gear[1]/compression-norm") > 0.05) {
+    # disengage autopilot locks
+    setprop("/autopilot/locks/altitude", '');
+    setprop("/autopilot/locks/heading", '');
+    setprop("/autopilot/locks/speed", '');
     setprop("/controls/flight/elevator-pos", 0);
+    # auto throttle off
     setprop("/controls/engines/engine[0]/throttle", 0);
     setprop("/controls/engines/engine[1]/throttle", 0);
-    setprop("/controls/gear/brake-left", 0.65);
-    setprop("/controls/gear/brake-right", 0.65);
+  }
+  if (getprop("/gear/gear/compression-norm") > 0.05) {
+    # auto brake when front nose is on the ground
+    setprop("/controls/gear/brake-left", 0.4);
+    setprop("/controls/gear/brake-right", 0.4);
   }
 }
 
