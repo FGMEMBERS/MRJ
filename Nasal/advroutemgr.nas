@@ -14,6 +14,11 @@
 # 
 ###############################################################################
 
+#
+# In case Nasal doesn't have math.tan (doesn't in 1.9.1)
+#
+var tan = func(angle) { return math.sin(angle) / math.cos(angle); };
+
 var AdvancedRouteManager = { _instance : nil };
 AdvancedRouteManager.instance = func()
 {
@@ -92,7 +97,7 @@ AdvancedRouteManager.distanceForRemoval = func() {
 
   var distance = 0;
   if (angle > 0.1 and angle < 179.9) {
-    distance = math.abs(radius / math.tan(angle * math.pi / 180 / 2));
+    distance = math.abs(radius / tan(angle * math.pi / 180 / 2));
   } 
 
   setprop("/autopilot/advanced-route-manager/heading1-deg", heading1);
