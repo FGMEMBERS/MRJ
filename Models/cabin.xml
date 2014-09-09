@@ -1,0 +1,10 @@
+<!--
+  Cabin model for MRJ
+  Created on Aug. 1st, 2009 by Tat Nishioka
+  $Id$
+-->
+     
+<PropertyList>
+  <path>cabin.ac</path>
+
+</PropertyList>

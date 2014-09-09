@@ -1,0 +1,333 @@
+<?xml version="1.0"?>
+<!-- 
+     MRJ90.xml - Animation configuration for MRJ90
+     Created on July 28th, 2009 by Tatsuhiro Nishioka
+     $Id$
+  -->
+
+<PropertyList>
+  <path>MRJ90.ac</path>
+  <nasal>
+    <load>
+      var livery_update = aircraft.livery_update.new("Aircraft/MRJ/Models/Liveries", 10);
+    </load>
+
+    <unload>
+      livery_update.stop();
+    </unload>
+  </nasal>
+
+  <!-- Cockpit Panels -->
+  <model>
+    <path>Aircraft/MRJ/Instruments/panel.xml</path>
+    <offsets>
+      <x-m>-15.98</x-m>
+      <y-m> 0.05</y-m>
+      <z-m> 1.36</z-m>
+    </offsets>
+    <pitch-deg>0</pitch-deg>
+  </model>
+
+  <!-- Cabin -->
+  <model>
+    <path>Aircraft/MRJ/Models/cabin.xml</path>
+    <offsets>
+      <x-m> 0.00</x-m>
+      <y-m> 0.00</y-m>
+      <z-m> 0.00</z-m>
+    </offsets>
+  </model>
+
+  <!-- Liveries -->
+  <animation>
+    <type>material</type>
+    <object-name>gear.nose</object-name>
+    <object-name>gear.left</object-name>
+    <object-name>gear.right</object-name>
+    <object-name>PW1000G.left</object-name>
+    <object-name>PW1000G.right</object-name>
+    <object-name>flapSupports</object-name>
+    <object-name>wing</object-name>
+    <object-name>fuselage</object-name>
+    <object-name>elevator.left</object-name>
+    <object-name>elevator.right</object-name>
+    <object-name>seats</object-name>
+    <object-name>hstab</object-name>
+    <object-name>vstab</object-name>
+    <object-name>doors</object-name>
+    <property-base>sim/model/livery</property-base>
+    <texture-prop>texture</texture-prop>
+    <texture>MRJ.png</texture>
+  </animation> 
+
+  <animation>
+    <type>material</type>
+    <object-name>cabinet.front</object-name>
+    <object-name>cabinet.rear</object-name>
+    <property-base>sim/model/livery-cabinet</property-base>
+    <texture-prop>texture</texture-prop>
+    <texture>cabinet.png</texture>
+  </animation> 
+
+  <animation>
+    <type>material</type>
+    <object-name>floor</object-name>
+    <property-base>sim/model/livery-carpet</property-base>
+    <texture-prop>texture</texture-prop>
+    <texture>carpet.png</texture>
+  </animation> 
+
+  <!-- turbo fans -->
+  <animation>
+    <type>spin</type>
+    <object-name>fan.left</object-name>
+    <object-name>fanShaft.left</object-name>
+    <property>fdm/jsbsim/propulsion/engine[0]/n2</property>
+    <factor>20</factor>
+    <center>
+      <x-m>-4.95721</x-m>
+      <y-m>-4.96362</y-m>
+      <z-m>-0.781231</z-m>
+    </center>
+    <axis>
+      <x>1.0</x>
+      <y>0.0</y>
+      <z>0.0</z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>spin</type>
+    <object-name>fan.right</object-name>
+    <object-name>fanShaft.right</object-name>
+    <property>fdm/jsbsim/propulsion/engine[1]/n2</property>
+    <factor>10</factor>
+    <center>
+      <x-m>-4.95721</x-m>
+      <y-m> 4.96362</y-m>
+      <z-m>-0.781231</z-m>
+    </center>
+    <axis>
+      <x>1.0</x>
+      <y>0.0</y>
+      <z>0.0</z>
+    </axis>
+  </animation>
+
+  <!-- gears -->
+  <animation>
+    <type>select</type>
+    <object-name>gear.left</object-name>
+    <object-name>gear.right</object-name>
+    <object-name>gear.nose</object-name>
+    <condition>
+      <greater-than>
+	<property>gear/gear/position-norm</property>
+	<value>0.05</value>
+      </greater-than>
+    </condition>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>gear.left</object-name>
+    <property>gear/gear/position-norm</property>
+    <interpolation>
+      <entry>
+	<ind>0</ind>
+	<dep> 90</dep>
+      </entry>
+      <entry>
+	<ind>0.2</ind>
+	<dep> 90</dep>
+      </entry>
+      <entry>
+	<ind>1.0</ind>
+	<dep>0</dep>
+      </entry>
+    </interpolation>
+    <center>
+      <x-m>  0.00 </x-m>
+      <y-m> -2.58 </y-m>
+      <z-m> -0.21 </z-m>
+    </center>
+    <axis>
+      <x> 1.000 </x>
+      <y> 0.000 </y>
+      <z> 0.000 </z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>gear.right</object-name>
+    <property>gear/gear/position-norm</property>
+    <interpolation>
+      <entry>
+	<ind>0</ind>
+	<dep> 90</dep>
+      </entry>
+      <entry>
+	<ind>0.2</ind>
+	<dep> 90</dep>
+      </entry>
+      <entry>
+	<ind>1.0</ind>
+	<dep>0</dep>
+      </entry>
+    </interpolation>
+    <center>
+      <x-m>  0.00 </x-m>
+      <y-m>  2.58 </y-m>
+      <z-m> -0.21 </z-m>
+    </center>
+    <axis>
+      <x>-1.000 </x>
+      <y> 0.000 </y>
+      <z> 0.000 </z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>gear.nose</object-name>
+    <property>gear/gear/position-norm</property>
+    <interpolation>
+      <entry>
+	<ind>0</ind>
+	<dep>105</dep>
+      </entry>
+      <entry>
+	<ind>0.2</ind>
+	<dep>105</dep>
+      </entry>
+      <entry>
+	<ind>1.0</ind>
+	<dep>0</dep>
+      </entry>
+    </interpolation>
+    <center>
+      <x-m> -15.17 </x-m>
+      <y-m>   0.00 </y-m>
+      <z-m>  -0.38 </z-m>
+    </center>
+    <axis>
+      <x> 0.000 </x>
+      <y> 1.000 </y>
+      <z> 0.000 </z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>translate</type>
+    <property>gear/gear[0]/compression-norm</property>
+    <object-name>wheel.nose</object-name>
+    <interpolation>
+      <entry>
+	<ind>0.0</ind>
+	<dep>0.0</dep>
+      </entry>
+      <entry>
+	<ind>0.5</ind>
+	<dep>-0.25</dep>
+      </entry>
+      <entry>
+	<ind>1.0</ind>
+	<dep>-0.3</dep>
+      </entry>
+      <entry>
+	<ind>10.0</ind>
+	<dep>-0.3</dep>
+      </entry>
+    </interpolation>
+    <axis>
+      <x> 0.00</x>
+      <y> 0.00</y>
+      <z>-1.00</z>
+    </axis>
+    <center>
+      <x-m> -15.17 </x-m>
+      <y-m>   0.00 </y-m>
+      <z-m>  -0.58 </z-m>
+    </center>
+  </animation>
+
+  <animation>
+    <type>translate</type>
+    <property>gear/gear[1]/compression-norm</property>
+    <object-name>wheel.left</object-name>
+    <interpolation>
+      <entry>
+	<ind>0.0</ind>
+	<dep>0.0</dep>
+      </entry>
+      <entry>
+	<ind>0.5</ind>
+	<dep>-0.25</dep>
+      </entry>
+      <entry>
+	<ind>1.0</ind>
+	<dep>-0.3</dep>
+      </entry>
+      <entry>
+	<ind>10.0</ind>
+	<dep>-0.3</dep>
+      </entry>
+    </interpolation>
+    <axis>
+      <x> 0.00</x>
+      <y> 0.00</y>
+      <z>-1.00</z>
+    </axis>
+    <center>
+      <x-m>  0.00 </x-m>
+      <y-m> -2.58 </y-m>
+      <z-m> -0.21 </z-m>
+    </center>
+  </animation>
+
+  <animation>
+    <type>translate</type>
+    <property>gear/gear[2]/compression-norm</property>
+    <object-name>wheel.right</object-name>
+    <interpolation>
+      <entry>
+	<ind>0.0</ind>
+	<dep>0.0</dep>
+      </entry>
+      <entry>
+	<ind>0.5</ind>
+	<dep>-0.25</dep>
+      </entry>
+      <entry>
+	<ind>1.0</ind>
+	<dep>-0.3</dep>
+      </entry>
+      <entry>
+	<ind>10.0</ind>
+	<dep>-0.3</dep>
+      </entry>
+    </interpolation>
+    <axis>
+      <x> 0.00</x>
+      <y> 0.00</y>
+      <z>-1.00</z>
+    </axis>
+    <center>
+      <x-m>  0.00 </x-m>
+      <y-m>  2.58 </y-m>
+      <z-m> -0.21 </z-m>
+    </center>
+  </animation>
+
+  <!-- lights -->
+  <animation>
+    <type>select</type>
+    <object-name>flashes</object-name>
+    <condition>
+      <property>sim/model/MRJ/lighting/strobe/state[0]</property>
+    </condition>   
+  </animation>
+  
+</PropertyList>
+
